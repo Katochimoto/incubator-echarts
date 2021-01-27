@@ -81,7 +81,7 @@ export default function (seriesType) {
             var samplingDim = Array.isArray(seriesModel.get('samplingDim')) ? seriesModel.get('samplingDim') : false;
             var coordSys = seriesModel.coordinateSystem;
             // Only cartesian2d support down sampling
-            if (coordSys.type === 'cartesian2d' && sampling) {
+            if (coordSys && coordSys.type === 'cartesian2d' && sampling) {
                 var baseAxis = coordSys.getBaseAxis();
                 var valueAxis = coordSys.getOtherAxis(baseAxis);
                 var extent = baseAxis.getExtent();
